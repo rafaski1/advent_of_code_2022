@@ -1,4 +1,4 @@
-url = "https://adventofcode.com/2022/day/1"
+"""https://adventofcode.com/2022/day/1"""
 
 with open(r"input.txt", "r") as file:
     elf = 0
