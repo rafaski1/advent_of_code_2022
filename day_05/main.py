@@ -16,17 +16,17 @@ stack = {
     9: ["C", "R", "Z", "G", "H"]
 }
 
-top_stack = []
+top_stack = ""
 with open(r"input.txt", "r") as file:
     for line in file.readlines()[10:]:
         line = [int(i) for i in re.findall(r"\d+", line)]
-        quantity, from_, to = line[0], line[1], line[2]
+        quantity, from_stack, to_stack = line[0], line[1], line[2]
 
-    for i in range(quantity):
-        stack[to].append(stack[from_][-1])
-        stack[from_].pop(-1)
-    print(stack)
+        for i in range(quantity):
+            stack[to_stack].append(stack[from_stack][-1])
+            stack[from_stack].pop()
+
     for i in range(1, 10):
-        top_stack.append(stack.get(i)[-1])
+        top_stack += stack.get(i)[-1]
 
-    print("".join(top_stack))
+    print(top_stack)
