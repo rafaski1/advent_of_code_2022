@@ -1,4 +1,5 @@
 import re
+from copy import deepcopy
 
 """
 https://adventofcode.com/2022/day/5
@@ -16,17 +17,7 @@ stack = {
     9: ['H', 'G', 'Z', 'R', 'C']
 }
 
-stack_copy = {
-    1: ['T', 'D', 'W', 'Z', 'V', 'P'],
-    2: ['L', 'S', 'W', 'V', 'F', 'J', 'D'],
-    3: ['Z', 'M', 'L', 'S', 'V', 'T', 'B', 'H'],
-    4: ['R', 'S', 'J'],
-    5: ['C', 'Z', 'B', 'G', 'F', 'M', 'L', 'W'],
-    6: ['Q', 'W', 'V', 'H', 'Z', 'R', 'G', 'B'],
-    7: ['V', 'J', 'P', 'C', 'B', 'D', 'N'],
-    8: ['P', 'T', 'B', 'Q'],
-    9: ['H', 'G', 'Z', 'R', 'C']
-}
+stack_copy = deepcopy(stack)
 
 top_stack_1 = ""
 top_stack_2 = ""
