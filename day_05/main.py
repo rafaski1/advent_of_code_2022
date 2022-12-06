@@ -16,7 +16,17 @@ stack = {
     9: ['H', 'G', 'Z', 'R', 'C']
 }
 
-stack_copy = stack.copy()
+stack_copy = {
+    1: ['T', 'D', 'W', 'Z', 'V', 'P'],
+    2: ['L', 'S', 'W', 'V', 'F', 'J', 'D'],
+    3: ['Z', 'M', 'L', 'S', 'V', 'T', 'B', 'H'],
+    4: ['R', 'S', 'J'],
+    5: ['C', 'Z', 'B', 'G', 'F', 'M', 'L', 'W'],
+    6: ['Q', 'W', 'V', 'H', 'Z', 'R', 'G', 'B'],
+    7: ['V', 'J', 'P', 'C', 'B', 'D', 'N'],
+    8: ['P', 'T', 'B', 'Q'],
+    9: ['H', 'G', 'Z', 'R', 'C']
+}
 
 top_stack_1 = ""
 top_stack_2 = ""
@@ -30,7 +40,7 @@ with open(r"input.txt", "r") as file:
             stack[to_stack].append(stack[from_stack][-1])
             stack[from_stack].pop()
 
-        # part 2
+        # part two
         stack_copy[to_stack].extend(stack_copy[from_stack][-quantity:])
         del stack_copy[from_stack][-quantity:]
 
